@@ -21,7 +21,12 @@ Thumbs.db
 
 # 本地 Agent 运行状态
 .claude/
+.agents/
+.codex/
 .meta-kim/
+.mcp.json
+AGENTS.md
+CLAUDE.md
 
 # 飞书同步脚本/配置（含文档 token，不提交）
 scripts/

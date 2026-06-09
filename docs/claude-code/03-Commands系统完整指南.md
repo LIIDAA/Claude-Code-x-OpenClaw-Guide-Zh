@@ -9,14 +9,16 @@
 > - **个人博客**：https://aiking.dev
 > - **预计学时**：4-6小时
 > - **难度等级**：⭐⭐ 入门级
-> - **更新日期**：2026年5月30日
-> - **适用版本**：Claude Code v2.1.158（验证于 2026-05-30）
+> - **更新日期**：2026年6月9日
+> - **适用版本**：Claude Code v2.1.169（验证于 2026-06-09；v2.1.158 以前差量保留为历史基线）
 > - **信息来源**：[内置命令参考](https://code.claude.com/docs/en/commands) | [Skills 官方文档](https://code.claude.com/docs/en/slash-commands) | [Claude Command Suite](https://github.com/qdhenry/Claude-Command-Suite) | [最佳实践](https://www.anthropic.com/engineering/claude-code-best-practices)
 > - **前置要求**：已完成Claude Code安装和基础使用
 
 ---
 
 ## 本课学习目标
+
+我在公众号“老金带你玩AI”里反复强调一件事：命令不是炫技，命令要能把真实工作收口。
 
 完成本课学习后，你将能够：
 

@@ -9,8 +9,8 @@
 > - **个人博客**：https://aiking.dev
 > - **预计学时**：2-3小时
 > - **难度等级**：⭐⭐⭐ 进阶
-> - **更新日期**：2026年5月30日
-> - **适用版本**：Claude Code v2.1.158（验证于 2026-05-30）
+> - **更新日期**：2026年6月9日
+> - **适用版本**：Claude Code v2.1.169（验证于 2026-06-09；v2.1.158 以前差量保留为历史基线）
 > - **信息来源**：
 >   - [Claude Code 官方文档 - Channels](https://code.claude.com/docs/en/channels)
 >   - [Claude Code 官方文档 - Scheduled tasks](https://code.claude.com/docs/en/scheduled-tasks)
@@ -19,6 +19,8 @@
 ---
 
 ## 本课学习目标
+
+老金在课程里讲计划任务时，始终把“谁来接结果”放在前面；自动化没人收口，就只是更快地产生混乱。
 
 完成本课后，你将能：
 
@@ -594,4 +596,4 @@ claude --resume
 
 ---
 
-> **最后更新**：2026年5月30日 | **适用版本**：Claude Code v2.1.158
+> **最后更新**：2026年6月9日 | **适用版本**：Claude Code v2.1.169

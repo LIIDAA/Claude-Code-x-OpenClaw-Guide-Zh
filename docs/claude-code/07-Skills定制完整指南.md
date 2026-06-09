@@ -9,14 +9,16 @@
 > - **个人博客**：https://aiking.dev
 > - **预计学时**：8-10小时
 > - **难度等级**：⭐⭐ 入门级（有Claude Code基础即可）
-> - **更新日期**：2026年5月30日
-> - **适用版本**：Claude Code v2.1.158（验证于 2026-05-30）
+> - **更新日期**：2026年6月9日
+> - **适用版本**：Claude Code v2.1.169（验证于 2026-06-09；v2.1.158 以前差量保留为历史基线）
 > - **前置要求**：已完成Claude Code安装和Commands基础使用
 > - **🆕 专属内容**：Hooks系统、Forked Sub-Agents、Hot Reloading
 
 ---
 
 ## 本课学习目标
+
+我把 Skill 讲成可复用工作流，是因为老金自己的经验里，真正省时间的是把好判断沉淀下来。
 
 完成本课学习后，你将能够：
 
@@ -410,49 +412,11 @@ for item in items:
 **macOS/Linux：**
 ```bash
 cat > .claude/skills/code-commenter/SKILL.md <<'EOF'
----
-name: code-commenter
-description: 当用户要求"添加注释"、"代码注释"或"注释代码"时，自动为代码添加清晰的中文注释
----
-
-# 代码注释生成器
-
-## 角色定义
-你是一位经验丰富的代码审查专家，擅长编写清晰、准确、有价值的代码注释。
-
-## 何时激活
-当用户说以下内容时激活本Skill：
-- "帮我添加注释"
-- "给这段代码加注释"
-- "代码注释"
-- "comment this code"
-
-## 注释原则
-
-### 1. 解释"为什么"而不是"是什么"
-（示例代码：Python注释对比）
-# ❌ 差的注释：循环遍历列表
-for item in items:
-    process(item)
-
-# ✅ 好的注释：过滤掉已过期的订单，避免重复发货
-for item in items:
-    process(item)
-
-### 2. 注释格式规范
-- **函数/方法**：说明功能、参数、返回值、异常
-- **复杂逻辑**：解释业务背景和设计决策
-- **魔法数字**：说明数值含义（如：86400秒 = 24小时）
-
-### 3. 语言要求
-- 使用简洁的中文
-- 避免废话和自明的注释
-- 专业术语保持英文（如API、JWT、JSON）
-
-## 输出格式
-直接输出添加注释后的完整代码，不要额外解释或对话。
+# 粘贴上方 Windows 示例中 @' 和 '@ 之间的完整 SKILL.md 内容
 EOF
 ```
+
+这里不再把同一份 `SKILL.md` 重写一遍。跨平台差异只在“怎么把文本写入文件”，Skill 本体内容应该完全一致，否则后面排查时会分不清是平台问题还是内容问题。
 
 💡 **SKILL.md结构说明**：
 - **YAML Frontmatter**（`---`包裹）：
@@ -527,70 +491,20 @@ for item in items:
 
 ```bash
 cat > .claude/skills/code-commenter/SKILL.md << 'EOF'
----
-name: code-commenter
-description: 当用户要求"添加注释"、"代码注释"或"注释代码"时，自动为代码添加清晰的中文注释
----
-
-# 代码注释生成器
-
-## 角色定义
-你是一位经验丰富的代码审查专家，擅长编写清晰、准确、有价值的代码注释。
-
-## 何时激活
-当用户说以下内容时激活本Skill：
-- "帮我添加注释"
-- "给这段代码加注释"
-- "代码注释"
-- "comment this code"
-
-## 注释原则
-
-### 1. 解释"为什么"而不是"是什么"
-示例：
-（Python代码对比）
-# ❌ 差的注释：循环遍历列表
-for item in items:
-
-# ✅ 好的注释：过滤掉已过期的订单，避免重复发货
-for item in items:
-
-### 2. 注释格式规范
-- **函数/方法**：说明功能、参数、返回值、异常
-- **复杂逻辑**：解释业务背景和设计决策
-- **魔法数字**：说明数值含义（如：86400秒 = 24小时）
-
-### 3. 语言要求
-- 使用简洁的中文
-- 避免废话和自明的注释
-- 专业术语保持英文（如API、JWT、JSON）
-
-## 输出格式
-直接输出添加注释后的完整代码，不要额外解释或对话。
+# 粘贴上方 Windows 示例中 @' 和 '@ 之间的完整 SKILL.md 内容
 EOF
 ```
 
-#### 步骤4：验证Skill配置
+#### 步骤5：确认修改被读取
 
-**验证文件结构：**
-```bash
-# 查看Skill目录结构
-tree .claude/skills/code-commenter/
-# 或者用ls
-ls -la .claude/skills/code-commenter/
+前面已经验证过目录结构，这里只确认文件头还在，避免刚才覆盖时把 YAML frontmatter 写丢：
 
-# 预期输出：
-# .claude/skills/code-commenter/
-# └── SKILL.md
-```
-
-**验证YAML格式：**
 ```bash
 # 查看SKILL.md前几行（YAML部分）
 head -n 10 .claude/skills/code-commenter/SKILL.md
 ```
 
-#### 步骤5：测试Skill
+#### 步骤6：测试Skill
 
 **启动Claude Code：**
 ```bash

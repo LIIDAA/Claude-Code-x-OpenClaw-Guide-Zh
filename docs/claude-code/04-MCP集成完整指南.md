@@ -9,13 +9,15 @@
 > - **个人博客**：https://aiking.dev
 > - **预计学时**：4-6小时
 > - **难度等级**：⭐⭐ 入门级（有Claude Code基础即可）
-> - **更新日期**：2026年5月30日
-> - **适用版本**：MCP规范 2025-11-25 / Claude Code v2.1.158（验证于 2026-05-30）
+> - **更新日期**：2026年6月9日
+> - **适用版本**：MCP规范 2025-11-25 / Claude Code v2.1.169（验证于 2026-06-09；v2.1.158 以前差量保留为历史基线）
 > - **前置要求**：已完成Claude Code安装和基础使用
 
 ---
 
 ## 本课学习目标
+
+老金我讲 MCP 时会优先讲边界和证据来源，因为外部工具越强，越不能靠感觉授权。
 
 完成本课学习后，你将能够：
 
@@ -747,21 +749,7 @@ Local作用域：GITHUB_PERSONAL_ACCESS_TOKEN = "local-override-token"
 }
 ```
 
-**Project作用域**（项目根目录 `.mcp.json`）：
-
-```json
-{
-  "mcpServers": {
-    "github": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
-      "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}"
-      }
-    }
-  }
-}
-```
+**Project作用域**（项目根目录 `.mcp.json`）：沿用前面 GitHub MCP 的 `.mcp.json` 写法，把配置放到项目根目录，适合团队共享服务器声明；密钥仍然通过环境变量注入，不要把 token 写进仓库。
 
 **User作用域**（使用CLI）：
 
@@ -2339,9 +2327,9 @@ npm publish --access public
 > - [Claude Code文档](https://code.claude.com/docs/en/mcp) | 验证日期：2026-05-30
 
 **作者**：老金
-**更新日期**：2026年5月30日
+**更新日期**：2026年6月9日
 **版本**：V1.5（v2.1.158 release 摘录入差量）
 **字数统计**：约3,500行 / 28,000字
-**适用版本**：MCP规范 2025-11-25 / Claude Code v2.1.158
+**适用版本**：MCP规范 2025-11-25 / Claude Code v2.1.169
 
 ---

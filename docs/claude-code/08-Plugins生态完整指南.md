@@ -9,12 +9,14 @@
 > - **个人博客**：https://aiking.dev
 > - **预计学时**：4-6小时
 > - **难度等级**：⭐⭐ 入门级
-> - **更新日期**：2026年5月30日
-> - **适用版本**：Claude Code v2.1.158（验证于 2026-05-30；v2.1.90+ 插件市场 env 见文内 release 摘录）
+> - **更新日期**：2026年6月9日
+> - **适用版本**：Claude Code v2.1.169（验证于 2026-06-09；v2.1.158 以前差量和 v2.1.90+ 插件市场 env 说明保留为历史基线）
 
 ---
 
 ## 📚 本课学习目标
+
+老金我看插件生态时最关心三件事：来源、权限、可撤销；这比插件名字听起来多厉害更重要。
 
 完成本课学习后，你将能够：
 
@@ -129,7 +131,7 @@ Plugin = manifest + runtime resources + optional markets/scope + 文档
 
 **官方数据**：
 
-- **当前版本**：Claude Code v2.1.158（2026年5月30日验证）
+- **当前版本**：Claude Code v2.1.169（2026年6月9日验证）
 - **官方市场**：✅ 已上线，可通过 `/plugin` 和网页入口协同使用
 - **社区Plugin**：持续增长中
 
@@ -195,13 +197,7 @@ cd /path/to/your/project
 
 如果你在本地开发一个还没发布到市场的 Plugin，才需要手动目录加载。
 
-```bash
-# 创建plugins目录（如果不存在）
-mkdir -p .claude/plugins
-
-# 克隆一个Plugin（以社区Plugin为例）
-git clone https://github.com/jeremylongshore/claude-code-plugins-plus .claude/plugins/plugins-plus
-```
+这一段按三步走：先把插件目录放进本地项目，再用 `--plugin-dir` 指给 Claude Code，最后在会话里确认资源是否出现。
 
 **步骤1：克隆Plugin到本地**
 
@@ -729,4 +725,4 @@ my-plugin/
 
 ---
 
-> **最后更新**：2026年5月30日 | **适用版本**：Claude Code v2.1.158
+> **最后更新**：2026年6月9日 | **适用版本**：Claude Code v2.1.169
